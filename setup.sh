@@ -1,9 +1,22 @@
 #!/usr/bin/env bash
 
-ln -s config.fish ~/.config/fish
-ln -s aliases/cli_aliases.fish ~/.config/fish/functions
-ln -s aliases/git_aliases.fish ~/.config/fish/functions
-ln -s aliases/npm_aliases.fish ~/.config/fish/functions
-ln -s aliases/yarn_aliases.fish ~/.config/fish/functions
-ln -s aliases/maven_aliases.fish ~/.config/fish/functions
-ln -s aliases/aws_aliases.fish ~/.config/fish/functions
+USER_HOME="`env | grep -e ^HOME= | cut -d= -f2`"
+CURRENT_DIR="$(dirname "$(readlink -f "$0")")"
+
+. $CURRENT_DIR/link.sh
+
+if [ -z "$CURRENT_DIR" ]; then
+	# error; for some reason, the path is not accessible
+	# to the script (e.g. permissions re-evaled after suid)
+	echo "Current dir is not accessible to the script, exiting"
+	exit 1
+fi
+
+link_file "config.fish" "." ".config/fish"
+link_file "omf.fish" "." ".config/fish/conf.d"
+link_file "cli_aliases.fish" "aliases" ".config/fish/functions"
+link_file "git_aliases.fish" "aliases" ".config/fish/functions"
+link_file "npm_aliases.fish" "aliases" ".config/fish/functions"
+link_file "yarn_aliases.fish" "aliases" ".config/fish/functions"
+link_file "maven_aliases.fish" "aliases" ".config/fish/functions"
+link_file "aws_aliases.fish" "aliases" ".config/fish/functions"
