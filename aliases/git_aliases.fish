@@ -1,8 +1,9 @@
 set -Ux GIT_MAIN_BRANCH main
 
 # Git status alias
-alias g='git status -sb'
+abbr -a -g g git
 abbr -a -g gs git status
+alias gss='git status -sb'
 
 # Git add and remove aliases
 abbr -a -g ga git add
@@ -76,3 +77,10 @@ abbr -a -g gd git diff --color-words
 abbr -a -g gdc git diff --cached
 alias gl='git log --oneline --decorate'
 alias gslog="git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all"
+
+# remote
+abbr -a -g gr git remote
+abbr -a -g grv git remote -v
+abbr -a -g grrm git remote remove
+
+
