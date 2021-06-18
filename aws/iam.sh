@@ -17,4 +17,4 @@ aws iam delete-policy --policy-arn {policy_arn}
 aws iam delete-role --role-name {role_name}
 
 # deny all on user
-aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AwsDenyAll --user-name {user}
+aws iam attach-user-policy --policy-arn arn:aws:iam::aws:policy/AWSDenyAll --user-name {user}
