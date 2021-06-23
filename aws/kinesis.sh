@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # produce
 aws kinesis put-record --stream-name {name} --partition-key {key} --data "my data" --cli-binary-format raw-in-base64-out
 
