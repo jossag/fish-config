@@ -12,6 +12,9 @@ aws kms encrypt --key-id {id} --plaintext "Hello World" --output text --query Ci
 # decrypt
 aws kms decrypt --ciphertext-blob fileb://output.dat --query Plaintext --output text
 
+# update alias
+aws kms update-alias --alias-name alias/{alias} --target-key-id {id}
+
 ------------------
 
 # create data key (envelope encryption)
