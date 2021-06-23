@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # mb
 aws s3 mb s3://BUCKET --region REGION
 
