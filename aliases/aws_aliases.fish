@@ -14,3 +14,6 @@ abbr -a -g ec2 http --body http://169.254.169.265/latest
 abbr -a -g ec2m http --body http://169.254.169.265/latest/meta-data
 abbr -a -g ec2u http --body http://169.254.169.265/latest/user-data
 abbr -a -g ec2d http --body http://169.254.169.265/latest/dynamic
+
+# cloudformation
+abbr -a -g acf aws cloudformation
