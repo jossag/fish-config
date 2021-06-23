@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # create lambda layer
 aws lambda publish-layer-version --layer-name {layer_name} --description "Description" --license-info "MIT" --content S3Bucket={bucket},S3Key=layer.zip --compatible-runtimes python3.6 python3.7 python3.8
 
